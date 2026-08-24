@@ -5,7 +5,7 @@
 | Category | Count | Recurring? |
 |---|---:|---|
 | Syntax mistake | 4 | Yes |
-| Implementation mistake | 6 | Yes |
+| Implementation mistake | 8 | Yes |
 | Wrong data structure usage | 4 | Yes |
 | Edge-case mistake | 0 | No |
 | Wrong pattern | 0 | No |
@@ -33,6 +33,8 @@
 | Valid Parentheses | 2 | 19 | Wrong data structure usage | Still called `top()` for a closing bracket without first checking whether the stack was empty; input `"]"` terminates the program. |
 | Valid Parentheses | 2 | 21–31 | Implementation mistake | Still ignored mismatched closing brackets instead of returning `false`; for example, `"([)])"` would incorrectly be accepted. |
 | Valid Parentheses | 3 | 24–34 | Implementation mistake | Used three independent `if/else` statements. After one bracket type matched, the next unrelated `if` failed and its `else` returned `false`, rejecting every non-empty valid input. |
+| Binary Search | 1 | 15 | Implementation mistake | Used `left < right`, so a one-element search range was never inspected; for example, `[5]` with target `5` returned `-1`. |
+| Binary Search | 1 | 22 | Implementation mistake | Set `left = middle`, which may leave the boundary unchanged and cause an infinite loop when two elements remain. |
 
 ### Two Sum — diagnosis
 

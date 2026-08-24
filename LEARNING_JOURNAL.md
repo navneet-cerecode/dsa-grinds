@@ -8,6 +8,7 @@ This file records what has been learned from each completed problem. It is separ
 |---|---|---|---|
 | Two Sum | One-pass hashing / complement lookup | Solved with substantial hints | Weak |
 | Valid Parentheses | Stack / LIFO matching | Solved after explanation | Weak |
+| Binary Search | Binary search / search-space reduction | Solved with hints | Weak |
 
 ## 1. Two Sum
 
@@ -103,3 +104,39 @@ brackets.empty();
 - `top()` and `pop()` are unsafe on an empty stack.
 - Independent `if/else` statements are not interchangeable with one combined decision.
 - More independent stack practice is needed before this pattern is retained.
+
+## 3. Binary Search
+
+### What I learned
+
+- A sorted array allows half of the remaining search space to be discarded after one comparison.
+- Use inclusive `left` and `right` boundaries and continue while `left <= right`.
+- If the middle value is smaller than the target, move `left` to `middle + 1`.
+- If the middle value is larger than the target, move `right` to `middle - 1`.
+- The `+1` and `-1` ensure that an already inspected middle index is discarded and the loop makes progress.
+- If `left > right`, the target is absent.
+
+### Pattern
+
+Binary search / search-space reduction.
+
+### Recognition signals
+
+- The input is sorted or has a monotonic property.
+- A comparison can eliminate an entire half of the possibilities.
+- The task asks to find a value, boundary, first occurrence, or last occurrence.
+
+### Mental trigger
+
+> Can one comparison prove that half of the remaining search space is impossible?
+
+### Complexity
+
+- Time: `O(log n)`
+- Space: `O(1)`
+
+### Retrospective
+
+- A one-element range is valid, so the loop condition is `left <= right`.
+- Every update must exclude `middle`; otherwise, the loop may never progress.
+- Boundary direction still needs independent practice.
