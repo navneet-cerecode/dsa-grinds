@@ -1,0 +1,10 @@
+# Compiled C++ output
+*.exe
+*.out
+*.o
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
