@@ -4,9 +4,9 @@
 
 | Category | Count | Recurring? |
 |---|---:|---|
-| Syntax mistake | 3 | Yes |
-| Implementation mistake | 2 | Yes |
-| Wrong data structure usage | 2 | Yes |
+| Syntax mistake | 4 | Yes |
+| Implementation mistake | 6 | Yes |
+| Wrong data structure usage | 4 | Yes |
 | Edge-case mistake | 0 | No |
 | Wrong pattern | 0 | No |
 | Complexity issue | 0 | No |
@@ -26,6 +26,13 @@
 | Two Sum | 2 | 16 | Syntax mistake | Placed the assignment semicolon after the closing brace. |
 | Two Sum | 3 | 14 | Syntax mistake | Mismatched square and curly delimiters in the return statement. |
 | Two Sum | 3 | 14 | Wrong data structure usage | Looked up the current array value instead of the complement. |
+| Valid Parentheses | 1 | 14, 18, 22, 26 | Syntax mistake | Compared `char` values with string literals using double quotes instead of character literals using single quotes. |
+| Valid Parentheses | 1 | 13 | Wrong data structure usage | Called `top()` without first checking whether the stack was empty. |
+| Valid Parentheses | 1 | 13 | Implementation mistake | Read `newest` before processing the current character, so it could be invalid or stale. |
+| Valid Parentheses | 1 | 18–28 | Implementation mistake | Popped matching closers but did not reject a closing bracket that mismatched the stack top. |
+| Valid Parentheses | 2 | 19 | Wrong data structure usage | Still called `top()` for a closing bracket without first checking whether the stack was empty; input `"]"` terminates the program. |
+| Valid Parentheses | 2 | 21–31 | Implementation mistake | Still ignored mismatched closing brackets instead of returning `false`; for example, `"([)])"` would incorrectly be accepted. |
+| Valid Parentheses | 3 | 24–34 | Implementation mistake | Used three independent `if/else` statements. After one bracket type matched, the next unrelated `if` failed and its `else` returned `false`, rejecting every non-empty valid input. |
 
 ### Two Sum — diagnosis
 
