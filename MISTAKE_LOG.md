@@ -4,8 +4,8 @@
 
 | Category | Count | Recurring? |
 |---|---:|---|
-| Syntax mistake | 4 | Yes |
-| Implementation mistake | 8 | Yes |
+| Syntax mistake | 5 | Yes |
+| Implementation mistake | 10 | Yes |
 | Wrong data structure usage | 4 | Yes |
 | Edge-case mistake | 0 | No |
 | Wrong pattern | 0 | No |
@@ -35,6 +35,9 @@
 | Valid Parentheses | 3 | 24–34 | Implementation mistake | Used three independent `if/else` statements. After one bracket type matched, the next unrelated `if` failed and its `else` returned `false`, rejecting every non-empty valid input. |
 | Binary Search | 1 | 15 | Implementation mistake | Used `left < right`, so a one-element search range was never inspected; for example, `[5]` with target `5` returned `-1`. |
 | Binary Search | 1 | 22 | Implementation mistake | Set `left = middle`, which may leave the boundary unchanged and cause an infinite loop when two elements remain. |
+| Move Zeroes | 1 | 25 | Syntax mistake | Returned `nums` from a function declared `void`; an in-place function modifies the referenced vector and returns no value. |
+| Move Zeroes | 1 | 14–19 | Implementation mistake | Declared a `read` pointer but never advanced it; the loop variable `i` changed while every check still read `nums[0]`. |
+| Move Zeroes | 1 | 16 | Implementation mistake | Wrote `0` at the write position instead of copying the non-zero value currently being read. |
 
 ### Two Sum — diagnosis
 

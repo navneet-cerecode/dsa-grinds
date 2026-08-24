@@ -9,6 +9,7 @@ This file records what has been learned from each completed problem. It is separ
 | Two Sum | One-pass hashing / complement lookup | Solved with substantial hints | Weak |
 | Valid Parentheses | Stack / LIFO matching | Solved after explanation | Weak |
 | Binary Search | Binary search / search-space reduction | Solved with hints | Weak |
+| Move Zeroes | Two pointers / read-write positions | Solved with hints | Weak |
 
 ## 1. Two Sum
 
@@ -140,3 +141,39 @@ Binary search / search-space reduction.
 - A one-element range is valid, so the loop condition is `left <= right`.
 - Every update must exclude `middle`; otherwise, the loop may never progress.
 - Boundary direction still needs independent practice.
+
+## 4. Move Zeroes
+
+### What I learned
+
+- A read pointer scans every element while a write pointer marks where the next retained value belongs.
+- Copy each non-zero value to the write position and advance `write` only after a copy.
+- After compacting the non-zero values, fill positions from `write` to the end with zero.
+- A `void` in-place function changes its reference argument and does not return the vector.
+- A pointer must advance consistently; declaring a pointer without updating it repeatedly reads the same element.
+
+### Pattern
+
+Two pointers / read-write positions.
+
+### Recognition signals
+
+- Modify an array in place.
+- Preserve the relative order of selected elements.
+- One position scans input while another tracks the next output position.
+- Extra array space is disallowed or unnecessary.
+
+### Mental trigger
+
+> Can one pointer read every item while another marks where the next valid item belongs?
+
+### Complexity
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+### Retrospective
+
+- The read pointer decides which value to copy.
+- The write pointer decides where that value belongs.
+- This pattern needs independent revision before confidence can increase.
