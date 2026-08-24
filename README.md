@@ -8,6 +8,7 @@ A beginner-friendly record of my 45-day placement-focused DSA training in C++.
 - `diagnostic_valid_parentheses.cpp` — finalized solution for Valid Parentheses
 - `diagnostic_binary_search.cpp` — finalized solution for Binary Search
 - `diagnostic_move_zeroes.cpp` — finalized solution for Move Zeroes
+- `diagnostic_fixed_sliding_window.cpp` — finalized solution for a fixed-size sliding window
 - `LEARNING_JOURNAL.md` — patterns, recognition signals, and concepts learned
 - `MISTAKE_LOG.md` — implementation mistakes and corrective actions
 - `PROBLEM_TRACKER.md` — attempts, results, hints, and confidence

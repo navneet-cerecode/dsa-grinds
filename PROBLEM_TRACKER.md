@@ -6,5 +6,6 @@
 | Valid Parentheses | Stack | LIFO matching | Easy | 4 | Solved after explanation | Not recorded | 4 | Weak |
 | Binary Search | Arrays / Binary Search | Search-space reduction | Easy | 2 | Solved with hints | Not recorded | 2 | Weak |
 | Move Zeroes | Arrays / Two Pointers | Read-write positions | Easy | 2 | Solved with hints | Not recorded | 2 | Weak |
+| Maximum Sum of Size-K Subarray | Arrays / Sliding Window | Fixed-size sliding window | Easy | 4 | Solved after explanation | Not recorded | 4 | Weak |
 
 Time will be recorded from the next problem onward. Confidence improves only after successful independent revision.

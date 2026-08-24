@@ -4,8 +4,8 @@
 
 | Category | Count | Recurring? |
 |---|---:|---|
-| Syntax mistake | 5 | Yes |
-| Implementation mistake | 10 | Yes |
+| Syntax mistake | 11 | Yes |
+| Implementation mistake | 13 | Yes |
 | Wrong data structure usage | 4 | Yes |
 | Edge-case mistake | 0 | No |
 | Wrong pattern | 0 | No |
@@ -38,6 +38,14 @@
 | Move Zeroes | 1 | 25 | Syntax mistake | Returned `nums` from a function declared `void`; an in-place function modifies the referenced vector and returns no value. |
 | Move Zeroes | 1 | 14–19 | Implementation mistake | Declared a `read` pointer but never advanced it; the loop variable `i` changed while every check still read `nums[0]`. |
 | Move Zeroes | 1 | 16 | Implementation mistake | Wrote `0` at the write position instead of copying the non-zero value currently being read. |
+| Fixed-Size Sliding Window | 1 | 11, 21 | Syntax mistake | Declared `maxi` twice in the same scope; the first declaration also used `INT_MIN` without including its required header and was unnecessary. |
+| Fixed-Size Sliding Window | 1 | 25 | Syntax mistake | Wrote a malformed `for` loop: missing a semicolon after initialization and placing a semicolon inside the increment expression. |
+| Fixed-Size Sliding Window | 1 | 25–27 | Implementation mistake | Used incorrect Phase 2 bounds and set `entering` to an index expression instead of the array value entering the window. |
+| Fixed-Size Sliding Window | 1 | 29 | Implementation mistake | Redeclared `sum` while trying to update it, shadowing the existing window sum instead of assigning the new value to it. |
+| Fixed-Size Sliding Window | 1 | 26–29 | Implementation mistake | Mixed a window-start interpretation with an entering-index interpretation, causing off-by-one calculations for the leaving and entering elements. |
+| Fixed-Size Sliding Window | 2 | 11, 21 | Syntax mistake | Kept the unnecessary `INT_MIN` declaration instead of removing it and declaring `int maxi = sum` after the first window was calculated. |
+| Fixed-Size Sliding Window | 2 | 25 | Syntax mistake | Again omitted the semicolon between `int i = k` and `i < n`, and incorrectly placed a semicolon after `i++` inside the `for` header. |
+| Fixed-Size Sliding Window | 3 | 25 | Syntax mistake | Removed the extra semicolon after `i++` but still omitted the required semicolon after `int i = k`, so the file did not compile. |
 
 ### Two Sum — diagnosis
 

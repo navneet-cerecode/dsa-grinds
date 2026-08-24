@@ -10,6 +10,7 @@ This file records what has been learned from each completed problem. It is separ
 | Valid Parentheses | Stack / LIFO matching | Solved after explanation | Weak |
 | Binary Search | Binary search / search-space reduction | Solved with hints | Weak |
 | Move Zeroes | Two pointers / read-write positions | Solved with hints | Weak |
+| Maximum Sum of Size-K Subarray | Fixed-size sliding window | Solved after explanation | Weak |
 
 ## 1. Two Sum
 
@@ -177,3 +178,39 @@ Two pointers / read-write positions.
 - The read pointer decides which value to copy.
 - The write pointer decides where that value belongs.
 - This pattern needs independent revision before confidence can increase.
+
+## 5. Maximum Sum of a Fixed-Size Subarray
+
+### What I learned
+
+- Adjacent fixed-size windows overlap, so their sums should not be recalculated from scratch.
+- Calculate the first window once, then subtract the leaving value and add the entering value.
+- If the entering index is `i`, the leaving index is `i - k`.
+- Initialize the maximum from the first real window rather than zero, because all values may be negative.
+- A `for` header has initialization, condition, and update separated by exactly two semicolons.
+
+### Pattern
+
+Fixed-size sliding window.
+
+### Recognition signals
+
+- The problem uses a contiguous subarray or substring.
+- Every considered range has the same size `k`.
+- Adjacent ranges overlap heavily.
+- Moving the range causes one value to leave and one value to enter.
+
+### Mental trigger
+
+> Can I update the next contiguous range using what changed instead of recalculating everything?
+
+### Complexity
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+### Retrospective
+
+- The first window creates both the initial sum and the initial maximum.
+- Consistent index meaning prevents off-by-one errors.
+- C++ loop syntax and index translation require focused practice.
